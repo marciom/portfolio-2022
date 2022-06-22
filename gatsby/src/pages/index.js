@@ -24,39 +24,13 @@ export default function HomePage() {
                 <section>
                     <h2>Featured Work</h2>
                     <div className="fw-container">
-                        <div clasNames="fw-project">
+                        <div className="fw-project">
                             <img src="" alt="" />
                             <div className="content">
                                 <h3 className="title serif">
                                     Canada Post Spring Series: Pansis
                                 </h3>
-                                <p class="desc">
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque lobortis semper
-                                    libero, luctus.
-                                </p>
-                            </div>
-                        </div>
-                        <div clasNames="fw-project">
-                            <img src="" alt="" />
-                            <div className="content">
-                                <h3 className="title serif">
-                                    Canada Post Spring Series: Pansis
-                                </h3>
-                                <p class="desc">
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque lobortis semper
-                                    libero, luctus.
-                                </p>
-                            </div>
-                        </div>
-                        <div clasNames="fw-project">
-                            <img src="" alt="" />
-                            <div className="content">
-                                <h3 className="title serif">
-                                    Canada Post Spring Series: Pansis
-                                </h3>
-                                <p class="desc">
+                                <p className="desc">
                                     Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque lobortis semper
                                     libero, luctus.
