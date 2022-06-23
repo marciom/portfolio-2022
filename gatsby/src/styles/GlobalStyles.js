@@ -8,8 +8,15 @@ const GlobalStyle = createGlobalStyle`
     --black: rgba(19, 17, 18, 1);
 }
 
-body{
-    background-color: var(--cream);
+html{
+    background: var(--cream);
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple) white;
+}
+
+
+header, main, footer {
+    padding: 0 7.5vw;
 }
 
 `;

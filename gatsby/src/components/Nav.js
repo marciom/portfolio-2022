@@ -1,23 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import Logo from "./Logo";
 
 const HeaderStyle = styled.header`
-    padding-top: 30px;
-    position: fixed;
+    --padding-top-1-8: 1.8em;
+
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: var(--cream);
+    padding-top: var(--padding-top-1-8);
+    padding-bottom: var(--padding-top-1-8);
+
     display: flex;
     justify-content: space-between;
     height: 30px;
     align-items: center;
-    box-shadow: inset 0px -1px 0px rgba(102, 99, 91, 0.3);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
     font-size: 1.5rem;
-    padding: 1.8em 7.5vw;
     color: hsl(237, 39%, 44%);
+    background-color: var(--cream);
+    box-shadow: inset 0px -1px 0px rgba(102, 99, 91, 0.3);
 
     nav {
         display: flex;
@@ -56,8 +62,7 @@ export default function Nav() {
     return (
         <>
             <HeaderStyle>
-                <LinkStyle to="/">Marcio Morgado Logo</LinkStyle>
-
+                <Logo />
                 <nav>
                     <ul>
                         <li>

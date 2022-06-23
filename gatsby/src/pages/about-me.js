@@ -6,38 +6,61 @@ export default function AboutPage() {
         <>
             <Layout breadcrumbs={["About Me"]}>
                 <section>
-                    <h1>
-                        I strive to create things that are <span>simple</span>,{" "}
-                        <span>effective</span> and <span>elegant</span>.
-                    </h1>
+                    {/* Pull out quote */}
+                    <p>
+                        I strive to create things that are simple, effective and
+                        elegant.
+                    </p>
+
+                    <h1>Hey folks, my name is Marcio Morgado.</h1>
+                    <p>
+                        I’m currently a product designer at Nasdaq. My
+                        day-to-day involves improving the experience of our
+                        users on the Nasdaq Data Link platform and pushing our
+                        design aesthetic forward.
+                    </p>
+
                     <img src="" alt="" />
 
                     <h2>Introduction</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Pellentesque lorem elit, tincidunt quis tincidunt in,
-                        feugiat sit amet justo. Duis dictum ante mi, eu
-                        porttitor metus varius id. Nullam non diam interdum,
-                        vulputate massa vel, convallis leo. Morbi purus risus,
-                        egestas et varius ut, euismod sit amet metus. Etiam ac
-                        tortor interdum, tristique metus in, consectetur massa.
-                        Duis bibendum sed tortor et cursus. Fusce in malesuada
-                        ipsum. Suspendisse dictum tellus non turpis faucibus
-                        consectetur. Suspendisse placerat tempor enim, a
-                        placerat nulla ultrices nec.
+                        I’ve always had a passion for art and technology and
+                        looked for ways to make money doing both. At first I
+                        intended to be an animator and I was fully motivated to
+                        become just that. One thing led to another and I
+                        stumbled upon graphic design. After pursuing education
+                        at Humber College I worked at HM&E Design, a
+                        Toronto-based design agency, for 6.5 years. During that
+                        time I built a foundation of typography, layout and
+                        critical design thinking.
                     </p>
+
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Pellentesque lorem elit, tincidunt quis tincidunt in,
-                        feugiat sit amet justo. Duis dictum ante mi, eu
-                        porttitor metus varius id. Nullam non diam interdum,
-                        vulputate massa vel, convallis leo. Morbi purus risus,
-                        egestas et varius ut, euismod sit amet metus. Etiam ac
-                        tortor interdum, tristique metus in, consectetur massa.
-                        Duis bibendum sed tortor et cursus. Fusce in malesuada
-                        ipsum. Suspendisse dictum tellus non turpis faucibus
-                        consectetur. Suspendisse placerat tempor enim, a
-                        placerat nulla ultrices nec.
+                        I approach design with a curious mindset and ask a lot
+                        of questions to understand the pain points of the
+                        project. This works well to establish the right tools to
+                        use and allows me to strive to create things that are
+                        simple, effective and elegant. I work best with
+                        collaborative teams that respect the design process.
+                    </p>
+
+                    <p>
+                        I describe myself as a fast learning generalist and a
+                        compulsive problem solver. I was fortunate to work on a
+                        wide variety of projects for different clients during my
+                        career. This has given me a unique insight into project
+                        requirements for both print and digital. On rare
+                        occasions, it allowed me to bridge the gap between print
+                        and digital and create a lasting experience for people.
+                    </p>
+
+                    <p>
+                        I’m currently open to opportunities at both large and
+                        small companies while leaning towards working with
+                        startups. If you have an opportunity that you think I
+                        would be a great fit for or an idea you would like to
+                        partner with don’t hesitate to reach out, I’d love to
+                        learn more about it.
                     </p>
 
                     <div>
