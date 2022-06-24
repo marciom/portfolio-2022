@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     --black: rgba(19, 17, 18, 1);
 }
 
+a{
+    color: inherit;
+}
+
 html{
     background: var(--cream);
     scrollbar-width: thin;

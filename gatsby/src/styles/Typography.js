@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import "@fontsource/exo";
-import "@fontsource/crimson-pro";
+import "@fontsource/exo/200.css";
+import "@fontsource/crimson-pro/300.css";
 
 const Typography = createGlobalStyle`
 
@@ -11,7 +11,7 @@ const Typography = createGlobalStyle`
 
 html {
     font-family: "Exo", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
 }
 `;
 
