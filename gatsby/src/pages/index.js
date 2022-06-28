@@ -1,88 +1,16 @@
 import React from 'react';
-import FeaturedWork from '../components/FeaturedWork';
+import FeaturedProjects from '../components/FeaturedProjects';
 import Hero from '../components/Hero';
+import Projects from '../components/Projects';
 
 export default function HomePage() {
    return (
       <>
          <Hero />
 
-         <FeaturedWork />
+         <FeaturedProjects />
 
-         <section>
-            <h2>Other work</h2>
-            <div>
-               <div>
-                  <img src="" alt="" />
-
-                  <div>
-                     <h3>SRI Magazine</h3>
-                     <p>Editorial, Illustration, Layout, Photo</p>
-                  </div>
-               </div>
-               <div>
-                  <img src="" alt="" />
-
-                  <div>
-                     <h3>Quandl Onboarding</h3>
-                     <p>Editorial, Illustration, Layout, Photo</p>
-                  </div>
-               </div>
-               <div>
-                  <img src="" alt="" />
-
-                  <div>
-                     <h3>Alternative Data Weekly</h3>
-                     <p>Editorial, Illustration, Layout, Photo</p>
-                  </div>
-               </div>
-               <div>
-                  <img src="" alt="" />
-
-                  <div>
-                     <h3>Converge3</h3>
-                     <p>Editorial, Illustration, Layout, Photo</p>
-                  </div>
-               </div>
-               <div>
-                  <img src="" alt="" />
-
-                  <div>
-                     <h3>Tawse Cider</h3>
-                     <p>Editorial, Illustration, Layout, Photo</p>
-                  </div>
-               </div>
-               <div>
-                  <img src="" alt="" />
-
-                  <div>
-                     <h3>Wedding</h3>
-                     <p>Editorial, Illustration, Layout, Photo</p>
-                  </div>
-               </div>
-               <div>
-                  <img src="" alt="" />
-
-                  <div>
-                     <h3>Marks</h3>
-                  </div>
-               </div>
-               <div>
-                  <img src="" alt="" />
-
-                  <div>
-                     <h3>Motion Graphics</h3>
-                  </div>
-               </div>
-               <div>
-                  <img src="" alt="" />
-
-                  <div>
-                     <h3>Data Visualization</h3>
-                  </div>
-               </div>
-            </div>
-         </section>
+         <Projects />
       </>
    );
 }

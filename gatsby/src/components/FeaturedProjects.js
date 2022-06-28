@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import { device } from './devices';
 
 const FWStyle = styled.section`
    h2 {
@@ -17,7 +18,7 @@ const FWStyle = styled.section`
          margin: 2rem 0 2.5rem 0;
       }
 
-      @media screen and (min-width: 768px) {
+      @media ${device.tablet} {
          font-size: 1.125rem /* 18/16 */;
          font-size: large;
 
@@ -57,7 +58,7 @@ const FWStyle = styled.section`
          margin-bottom: 55px;
       }
 
-      @media screen and (min-width: 768px) {
+      @media ${device.tablet} {
          display: flex;
          margin-bottom: 35px;
 
@@ -77,7 +78,7 @@ const FWStyle = styled.section`
          }
       }
 
-      @media screen and (min-width: 1100px) {
+      @media ${device.desktopL} {
          img {
             width: 100%;
          }
@@ -87,7 +88,7 @@ const FWStyle = styled.section`
    }
 `;
 
-export default function FeaturedWork() {
+export default function FeaturedProjects() {
    return (
       <FWStyle id="work">
          <h2>Featured Work</h2>
