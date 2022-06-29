@@ -36,5 +36,24 @@ module.exports = {
             path: path.join(__dirname, `src`, `images`),
          },
       },
+      {
+         resolve: 'gatsby-plugin-google-tagmanager',
+         options: {
+            id: 'GTM-P5XC2TQ',
+
+            // Include GTM in development.
+            //
+            // Defaults to false meaning GTM will only be loaded in production.
+            includeInDevelopment: false,
+
+            // Name of the event that is triggered
+            // on every Gatsby route change.
+            //
+            // Defaults to gatsby-route-change
+            routeChangeEventName: 'portfolio-route-change',
+            // Defaults to false
+            enableWebVitalsTracking: true,
+         },
+      },
    ],
 };
