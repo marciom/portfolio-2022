@@ -5,12 +5,18 @@ import { device } from './devices';
 
 const ProjectsStyle = styled.section`
    display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   grid-template-columns: repeat(auto-fit, minmax(max(300px, calc(100% / 4)), 1fr));
    column-gap: 26px;
    row-gap: 30px;
 
    h2 {
-      grid-column: auto / span minmax(1, 2);
+      @media ${device.tablet} {
+         grid-column: span 2;
+      }
+
+      @media ${device.desktop} {
+         grid-column: span 3;
+      }
    }
 
    .projectContainer {
