@@ -36,23 +36,25 @@ const FWStyle = styled.section`
       }
    }
    .fw-project {
-      img {
+      .gatsby-image-wrapper {
          border-radius: 10px;
          margin-bottom: 20px;
       }
 
       h3 {
          color: var(--purple);
-         font-size: 7vw;
-         line-height: 10.5vw;
+         font-size: 9vw;
+         line-height: 10vw;
          letter-spacing: -1px;
          margin: 0;
-         margin-bottom: 15px;
+
+         font-family: 'Crimson Pro', serif;
+         font-weight: 300;
       }
 
       p {
-         font-size: 6vw;
-         line-height: 8.25vw;
+         font-size: 5.25vw;
+         line-height: 7vw;
          color: #66635b;
          margin: 0;
          margin-bottom: 55px;
@@ -62,9 +64,8 @@ const FWStyle = styled.section`
          display: flex;
          margin-bottom: 35px;
 
-         img {
-            width: 340px;
-            margin-bottom: 15px;
+         .gatsby-image-wrapper {
+            margin-bottom: 3vh;
          }
 
          h3 {
@@ -96,19 +97,19 @@ export default function FeaturedProjects() {
             <div className="fw-project">
                <StaticImage src="../images/Pansies-thumbnail.jpg" alt="" placeholder="blurred" />
 
-               <h3 className="serif">Canada Post Spring Series: Pansis</h3>
+               <h3 className="serif">Canada Post Spring Series: Pansies</h3>
                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis semper libero, luctus.</p>
             </div>
             <div className="fw-project">
                <StaticImage src="../images/Quandl-thumbnail.jpg" alt="" placeholder="blurred" />
 
-               <h3>Canada Post Spring Series: Pansis</h3>
+               <h3 className="serif">Quandl Rebrand</h3>
                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis semper libero, luctus.</p>
             </div>
             <div className="fw-project">
                <StaticImage src="../images/Vector-thumbnail.jpg" alt="" placeholder="blurred" />
 
-               <h3>Canada Post Spring Series: Pansis</h3>
+               <h3>Vector Institute</h3>
                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis semper libero, luctus.</p>
             </div>
          </div>
