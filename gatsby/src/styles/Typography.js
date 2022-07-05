@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import "@fontsource/exo/200.css";
-import "@fontsource/crimson-pro/300.css";
+import { createGlobalStyle } from 'styled-components';
+import '@fontsource/exo/200.css';
+import '@fontsource/crimson-pro/300.css';
 
 const Typography = createGlobalStyle`
 

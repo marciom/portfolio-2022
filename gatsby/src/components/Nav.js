@@ -22,6 +22,8 @@ const HeaderStyle = styled.header`
    background: transparent;
    color: hsl(226, 22%, 20%);
 
+   font-size: 3vw;
+
    @media screen and (min-width: 569px) {
       --padding-top-bottom: 15px;
 
@@ -40,8 +42,6 @@ const HeaderStyle = styled.header`
    }
 
    nav {
-      font-size: 5vw;
-
       @media ${device.tablet} {
          font-size: 1.5rem;
       }
