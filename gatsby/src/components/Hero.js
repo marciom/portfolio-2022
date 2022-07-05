@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
@@ -55,13 +54,22 @@ export default function Hero() {
             <br />
             I’m Marcio Morgado.
          </h1>
-         <p>I’m a multidisciplinary designer fuelled by collaboration, curiosity, craftsmanship and coffee.</p>
+         <p>I’m a versatile designer fuelled by collaboration, curiosity, craftsmanship and coffee.</p>
          <p>
-            Browse my{' '}
+            Check out my most{' '}
             <AnchorLink to="/#work" className="test">
-               latest projects below
+               {' '}
+               recent projects below{' '}
             </AnchorLink>
-            , <Link to="/">view my resume</Link>, or <Link to="/">say hey</Link>.
+            , look over{' '}
+            <AnchorLink to="/#work" className="test">
+               my resume
+            </AnchorLink>
+            , or just say{' '}
+            <AnchorLink to="/#work" className="test">
+               hey
+            </AnchorLink>
+            .
          </p>
       </HeroStyle>
    );
