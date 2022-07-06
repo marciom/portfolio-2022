@@ -8,10 +8,10 @@ const size = {
 };
 
 export const device = {
-   mobile: `(min-width: ${size.mobile})`,
-   tablet: `(min-width: ${size.tablet})`,
-   laptop: `(min-width: ${size.laptop})`,
-   desktop: `(min-width: ${size.desktop})`,
-   desktopL: `(min-width: ${size.desktopL})`,
-   desktopXL: `(min-width: ${size.desktopXL})`,
+   mobile: `screen and (min-width: ${size.mobile})`,
+   tablet: `screen and  (min-width: ${size.tablet})`,
+   laptop: `screen and  (min-width: ${size.laptop})`,
+   desktop: `screen and  (min-width: ${size.desktop})`,
+   desktopL: `screen and  (min-width: ${size.desktopL})`,
+   desktopXL: `screen and  (min-width: ${size.desktopXL})`,
 };

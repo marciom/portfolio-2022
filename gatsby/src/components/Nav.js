@@ -22,18 +22,18 @@ const HeaderStyle = styled.header`
    background: transparent;
    color: hsl(226, 22%, 20%);
 
-   font-size: 3vw;
+   font-size: 4vw;
 
    @media screen and (min-width: 569px) {
       --padding-top-bottom: 15px;
 
       flex-direction: row;
       justify-content: space-between;
-      font-size: 1.2rem;
+      font-size: 2vw;
    }
 
    @media ${device.desktop} {
-      font-size: 1.5rem;
+      font-size: 1.5em;
    }
 
    &.scroll {
@@ -42,13 +42,13 @@ const HeaderStyle = styled.header`
    }
 
    nav {
-      @media ${device.tablet} {
-         font-size: 1.5rem;
-      }
-
       @media screen and (min-width: 569px) {
          display: flex;
          flex-direction: row;
+
+         & ul:nth-child(2) {
+            margin-left: 3vw;
+         }
       }
 
       ul {
