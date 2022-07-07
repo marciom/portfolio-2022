@@ -1,28 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { device } from './devices';
 
 const HeroStyle = styled.section`
-   margin-top: 30vh;
-   margin-bottom: 20vh;
+   margin-top: 22vh;
+   margin-bottom: 10vh;
 
    h1 {
       color: var(--purple);
-      font-size: 10.96vw;
+      font-size: 10vw;
       line-height: 12vw;
       letter-spacing: -0.03em;
       margin-bottom: 15px;
    }
 
    p {
-      font-size: 6.5vw;
-      line-height: 7.75vw;
+      font-size: 5.5vw;
+      line-height: 6.5vw;
       color: #979797;
       letter-spacing: -0.055rem;
       margin-bottom: 15px;
    }
 
-   @media screen and (min-width: 768px) {
+   @media ${device.desktop} {
       margin-top: 20vh;
 
       p {

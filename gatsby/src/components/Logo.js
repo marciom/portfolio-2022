@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const LogoStyle = styled.svg`
-   width: 25vw;
+   width: 20vw;
    max-width: 115px;
 `;
 

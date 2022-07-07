@@ -53,12 +53,19 @@ const HeaderStyle = styled.header`
 
       ul {
          text-align: center;
+         line-height: 1;
       }
 
       li {
          display: inline-block;
+
          & a:hover {
             color: hsl(237, 39%, 44%);
+            border-bottom: 1px solid var(--purple);
+         }
+
+         & a {
+            text-decoration: none;
          }
       }
 
