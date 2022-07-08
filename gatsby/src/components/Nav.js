@@ -5,7 +5,7 @@ import Logo from './Logo';
 import { device } from './devices';
 
 const HeaderStyle = styled.header`
-   --padding-top-bottom: 2vh;
+   --padding-top-bottom: 3vh;
 
    width: 100vw;
    display: flex;
@@ -29,7 +29,7 @@ const HeaderStyle = styled.header`
 
       flex-direction: row;
       justify-content: space-between;
-      font-size: 2vw;
+      font-size: 2.35vw;
    }
 
    @media ${device.desktop} {

@@ -4,33 +4,36 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { device } from './devices';
 
 const HeroStyle = styled.section`
-   margin-top: 22vh;
+   margin-top: 25vh;
    margin-bottom: 10vh;
 
    h1 {
       color: var(--purple);
       font-size: 10vw;
-      line-height: 12vw;
+      line-height: 1.2;
       letter-spacing: -0.03em;
       margin-bottom: 15px;
    }
 
    p {
-      font-size: 5.5vw;
-      line-height: 6.5vw;
+      font-size: 6vw;
+      line-height: 1.4;
       color: #979797;
-      letter-spacing: -0.055rem;
       margin-bottom: 15px;
+   }
+
+   @media ${device.tablet} {
+      h1 {
+         font-size: 10vw;
+      }
+      p {
+         font-size: 2rem;
+         line-height: 1.3;
+      }
    }
 
    @media ${device.desktop} {
       margin-top: 20vh;
-
-      p {
-         font-size: 2.325rem /* 34/16 */;
-         line-height: 3rem;
-         letter-spacing: -1.5px;
-      }
    }
 
    @media screen and (min-width: 1100px) {

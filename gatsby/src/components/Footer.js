@@ -1,19 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from './devices';
 
 const FooterStyle = styled.footer`
-   background: white;
-   margin-top: 10vh;
-
-   padding-top: 20px;
-   padding-bottom: 40px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
 
-   font-size: 1.5rem /* 24/16 */;
+   margin-top: 10vh;
+
+   padding-top: 20px;
+   padding-bottom: 40px;
+
+   background: white;
+   font-size: 4vw;
+
+   @media ${device.tablet} {
+      font-size: 1.25rem;
+   }
 
    address {
+      font-style: normal;
       margin-bottom: 10vh;
    }
 
@@ -23,12 +30,12 @@ const FooterStyle = styled.footer`
    }
 
    h2 {
-      font-size: 10vw;
+      font-size: 7vw;
       color: var(--purple);
       letter-spacing: -1px;
 
       @media screen and (min-width: 768px) {
-         font-size: 2.34em /* 56/16 */;
+         font-size: 2.2em;
       }
    }
 `;

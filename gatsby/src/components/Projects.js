@@ -1,17 +1,31 @@
 import React from 'react';
-// import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { device } from './devices';
 
 const ProjectsStyle = styled.section`
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(max(300px, calc(100% / 4)), 1fr));
-   column-gap: 26px;
-   row-gap: 30px;
-
    h2 {
+      font-size: 1.2rem;
+      color: var(--purple);
+      text-transform: uppercase;
+      margin: 0;
+
+      &:after {
+         display: block;
+         content: ' ';
+         width: 66px;
+         height: 2px;
+         background: black;
+         margin: 1.15em 0 1.35em 0;
+      }
+
       @media ${device.tablet} {
          grid-column: span 2;
+         font-size: 1.125rem /* 18/16 */;
+
+         &::after {
+            margin: 2rem 0 2.5rem 0;
+         }
       }
 
       @media ${device.desktop} {
@@ -20,11 +34,18 @@ const ProjectsStyle = styled.section`
    }
 
    .projectContainer {
-      img {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(max(300px, calc(100% / 4)), 1fr));
+
+      @media ${device.tablet} {
+         column-gap: 26px;
+         row-gap: 30px;
+      }
+      .gatsby-image-wrapper {
          display: none;
       }
 
-      .conc {
+      .content {
          &::after {
             content: ' ';
             display: block;
@@ -37,7 +58,7 @@ const ProjectsStyle = styled.section`
          .title {
             font-size: 10vw;
             line-height: 10vw;
-            color: $purple;
+            color: var(--purple);
             margin: 0;
          }
 
@@ -49,19 +70,19 @@ const ProjectsStyle = styled.section`
       }
 
       @media ${device.tablet} {
-         img {
+         .gatsby-image-wrapper {
             display: block;
             margin-bottom: 15px;
          }
 
-         .conc {
+         .content {
             &::after {
                content: none;
             }
 
             .title {
-               font-size: 2.25rem /* 36/16 */;
-               line-height: 2.25rem /* 36/16 */;
+               font-size: 2.25rem;
+               line-height: 2.25rem;
                margin: 0;
             }
 
@@ -78,61 +99,51 @@ export default function Projects() {
          <h2>Projects</h2>
          <div className="projectContainer">
             <div className="projectItem">
-               {/* <StaticImage src="https://via.placeholder.com/522x377" alt="" placeholder="blurred" /> */}
+               <StaticImage src="../images/placeholder.jpg" alt="" placeholder="blurred" />
 
-               <div>
-                  <h3>SRI Magazine</h3>
-                  <p>Editorial, Illustration, Layout, Photo</p>
+               <div className="content">
+                  <h3 className="title serif">SRI Magazine</h3>
+                  <p className="tags">Editorial, Illustration, Layout, Photo</p>
                </div>
             </div>
-         </div>
-         <div className="projectContainer">
             <div className="projectItem">
-               {/* <StaticImage src="https://via.placeholder.com/522x377" alt="" placeholder="blurred" /> */}
+               <StaticImage src="../images/placeholder.jpg" alt="" placeholder="blurred" />
 
-               <div>
-                  <h3>SRI Magazine</h3>
-                  <p>Editorial, Illustration, Layout, Photo</p>
+               <div className="content">
+                  <h3 className="title serif">SRI Magazine</h3>
+                  <p className="tags">Editorial, Illustration, Layout, Photo</p>
                </div>
             </div>
-         </div>
-         <div className="projectContainer">
             <div className="projectItem">
-               {/* <StaticImage src="https://via.placeholder.com/522x377" alt="" placeholder="blurred" /> */}
+               <StaticImage src="../images/placeholder.jpg" alt="" placeholder="blurred" />
 
-               <div>
-                  <h3>SRI Magazine</h3>
-                  <p>Editorial, Illustration, Layout, Photo</p>
+               <div className="content">
+                  <h3 className="title serif">SRI Magazine</h3>
+                  <p className="tags">Editorial, Illustration, Layout, Photo</p>
                </div>
             </div>
-         </div>
-         <div className="projectContainer">
             <div className="projectItem">
-               {/* <StaticImage src="https://via.placeholder.com/522x377" alt="" placeholder="blurred" /> */}
+               <StaticImage src="../images/placeholder.jpg" alt="" placeholder="blurred" />
 
-               <div>
-                  <h3>SRI Magazine</h3>
-                  <p>Editorial, Illustration, Layout, Photo</p>
+               <div className="content">
+                  <h3 className="title serif">SRI Magazine</h3>
+                  <p className="tags">Editorial, Illustration, Layout, Photo</p>
                </div>
             </div>
-         </div>
-         <div className="projectContainer">
             <div className="projectItem">
-               {/* <StaticImage src="https://via.placeholder.com/522x377" alt="" placeholder="blurred" /> */}
+               <StaticImage src="../images/placeholder.jpg" alt="" placeholder="blurred" />
 
-               <div>
-                  <h3>SRI Magazine</h3>
-                  <p>Editorial, Illustration, Layout, Photo</p>
+               <div className="content">
+                  <h3 className="title serif">SRI Magazine</h3>
+                  <p className="tags">Editorial, Illustration, Layout, Photo</p>
                </div>
             </div>
-         </div>
-         <div className="projectContainer">
             <div className="projectItem">
-               {/* <StaticImage src="https://via.placeholder.com/522x377" alt="" placeholder="blurred" /> */}
+               <StaticImage src="../images/placeholder.jpg" alt="" placeholder="blurred" />
 
-               <div>
-                  <h3>SRI Magazine</h3>
-                  <p>Editorial, Illustration, Layout, Photo</p>
+               <div className="content">
+                  <h3 className="title serif">SRI Magazine</h3>
+                  <p className="tags">Editorial, Illustration, Layout, Photo</p>
                </div>
             </div>
          </div>
