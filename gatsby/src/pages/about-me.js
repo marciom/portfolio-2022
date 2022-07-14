@@ -1,10 +1,24 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const AboutStyle = styled.section`
+   margin-top: 25vh;
+
+   h1 {
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--purple);
+   }
+`;
 
 export default function AboutPage() {
    return (
-      <section>
+      <AboutStyle>
          {/* Pull out quote */}
-         <h1>I strive to create things that are simple, effective and elegant.</h1>
+         <h1 className="serif">
+            I strive to create things that are <span className="italic">simple</span>,{' '}
+            <span className="italic">effective</span> and <span className="italic">elegant</span>.
+         </h1>
 
          <p>
             I’m currently a product designer at Nasdaq. My day-to-day involves improving the experience of our users on
@@ -94,6 +108,6 @@ export default function AboutPage() {
                </div>
             </div>
          </section>
-      </section>
+      </AboutStyle>
    );
 }
