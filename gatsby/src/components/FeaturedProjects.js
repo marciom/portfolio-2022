@@ -6,7 +6,7 @@ import { device } from './devices';
 const FWStyle = styled.section`
    h2 {
       font-size: 0.875rem;
-      color: var(--purple);
+      color: black;
       text-transform: uppercase;
 
       &:after {
@@ -41,7 +41,7 @@ const FWStyle = styled.section`
       }
 
       h3 {
-         color: var(--purple);
+         color: black;
          font-size: 9vw;
          line-height: 1.2;
          letter-spacing: -1px;

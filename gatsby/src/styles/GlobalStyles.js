@@ -13,14 +13,14 @@ a{
 }
 
 html{
-    background: var(--cream);
+    background: white;
     scrollbar-width: thin;
     scrollbar-color: var(--purple) white;
 }
 
 
 header, main, footer {
-    padding: 0 7.5vw;
+    padding: 0 60px;
 }
 
 `;

@@ -8,7 +8,7 @@ const HeroStyle = styled.section`
    margin-bottom: 10vh;
 
    h1 {
-      color: var(--purple);
+      color: black;
       font-size: 10vw;
       line-height: 1.2;
       letter-spacing: -0.03em;
@@ -18,7 +18,7 @@ const HeroStyle = styled.section`
    p {
       font-size: 6vw;
       line-height: 1.4;
-      color: #979797;
+      color: black;
       margin-bottom: 15px;
    }
 

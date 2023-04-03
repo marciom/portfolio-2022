@@ -37,7 +37,7 @@ const HeaderStyle = styled.header`
    }
 
    &.scroll {
-      background: var(--cream);
+      background: white;
       box-shadow: inset 0px -1px 0px rgba(102, 99, 91, 0.3);
    }
 

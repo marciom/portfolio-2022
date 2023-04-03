@@ -6,7 +6,7 @@ import { device } from './devices';
 const ProjectsStyle = styled.section`
    h2 {
       font-size: 1.2rem;
-      color: var(--purple);
+      color: black;
       text-transform: uppercase;
       margin: 0;
 
@@ -58,7 +58,7 @@ const ProjectsStyle = styled.section`
          .title {
             font-size: 10vw;
             line-height: 10vw;
-            color: var(--purple);
+            color: black;
             margin: 0;
          }
 
