@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "singularName": "work",
+    "pluralName": "works",
+    "displayName": "Work",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "credits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.credits"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false
+    },
+    "imageSocial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image-share"
+    }
+  }
+}

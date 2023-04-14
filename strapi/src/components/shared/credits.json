@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_credits",
+  "info": {
+    "displayName": "credits",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "credit": {
+      "type": "richtext"
+    }
+  }
+}

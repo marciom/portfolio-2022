@@ -1,21 +1,13 @@
 {
-    "eslint.enable": true,
-    "eslint.format.enable": true,
-
     // These are all my auto-save configs
     "editor.formatOnSave": true,
+    "emmet.triggerExpansionOnTab": true,
     // turn it off for JS and JSX, we will do this via eslint
-    "[javascript]": {
+    "[javascript][javascriptreact][typescript][typescriptreact]": {
         "editor.formatOnSave": false
     },
-    "[javascriptreact]": {
-        "editor.formatOnSave": false
-    },
-    // show eslint icon at bottom toolbar
-    "eslint.alwaysShowStatus": true,
     // tell the ESLint plugin to run on save
     "editor.codeActionsOnSave": {
-        "source.fixAll": true
-    },
-    "npm.enableRunFromFolder": true
+        "source.fixAll.eslint": true
+    }
 }

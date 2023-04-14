@@ -2,10 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 :root {
-    --purple: rgba(68, 73, 156, 1);
-    --cream: rgba(246, 244, 239, 1);
-    --grey: rgba(102, 99, 91, 1);
-    --black: rgba(19, 17, 18, 1);
+    --offwhite: #FAFAFA;
+    --grey: #979797;
+    --black: black;
 }
 
 a{
@@ -13,15 +12,19 @@ a{
 }
 
 html{
-    background: white;
+    background: var(--offwhite);
     scrollbar-width: thin;
     scrollbar-color: var(--purple) white;
 }
 
-
-header, main, footer {
+.container{
+    max-width: 1366px;
+    box-sizing: border-box;
     padding: 0 60px;
+    margin: 0 auto;
+    position: relative;
 }
+
 
 `;
 export default GlobalStyle;

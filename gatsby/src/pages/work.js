@@ -1,69 +1,152 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import { Link, graphql } from 'gatsby';
 
 const WorkStyle = styled.section`
-   margin-top: 15vh;
-   position: relative;
+    margin-top: 12vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
 
-   #sidebar{
-      width: 320px;
-      position: fixed;
+    #sidebar {
+        width: 328px;
+        height: fit-content;
+        position: sticky;
+        top: 180px;
 
-      .credits{
-         display: grid;
-         grid-template-columns: repeat(2, 1fr);
-         list-style: none;
-         padding: 0;
-         li{
-            margin-bottom: 10px;
-         }
-         span{
+        ::before {
+            content: ' ';
             display: block;
-            text-transform: uppercase;
-            font-size: 14px;
-         }
-      }
-   }
+            height: 2px;
+            background: var(--black);
+            margin-bottom: 14px;
+        }
 
-   #slides{
-      margin-left: 340px;
-      ul{
-         display: grid;
-         grid-template-columns: repeat(6, 1fr);
-         grid-column-gap: 15px;
-         grid-row-gap: 45px;
-         list-style:none;        
-      }
-   }
-`
+        .credits {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            font-size: 25px;
+            margin-bottom: 23px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+
+    #workImages {
+        width: 822px;
+        position: relative;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px 15px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .workNav {
+        /* background-color: cyan; */
+        display: flex;
+        justify-content: space-between;
+        color: var(--grey);
+        flex-wrap: wrap;
+
+        ::before {
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 1px;
+            transform: scaleY(0.5);
+            background-color: var(--black);
+            margin: 15px 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        div {
+            display: inline-block;
+
+            a:first-child::after {
+                content: '/';
+                padding: 0 7px 0 7px;
+            }
+
+            a:nth-child(2) {
+                color: var(--black);
+            }
+        }
+    }
+`;
 
 export default function WorkPage() {
-   return (
-      <WorkStyle>
-         <div id="sidebar" className="work-info">
-           <h1>Canada Post: Spring Series — Pansies</h1>
+    return (
+        <WorkStyle>
+            <div id="sidebar" className="work-info">
+                <h1>Canada Post: Spring Series 2015 Pansies </h1>
 
-            <div className="content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia lobortis vestibulum. Suspendisse ut faucibus nisl, sed gravida neque. Vivamus nunc urna, sodales ac egestas vel, dignissim sit amet metus. Phasellus tincidunt, elit at maximus consectetur, nisi eros volutpat ex, at convallis nisi justo et eros. Donec nec accumsan quam.</p></div>
-            <ul className="credits">
-               <li><span className='title'>{'{ Project }'}</span>Spring Series 2015</li>
-               <li><span className='title'>{'{ Client }'}</span>Canada Post</li>
-               <li><span className='title'>{'{ Studio }'}</span>HM&#38;E Design</li>
-               <li><span className='title'>{'{ Creative Director }'}</span>Paul Haslip</li>
-               <li><span className='title'>{'{ My Role }'}</span>Design &#38; Production</li>
-            </ul>
-         </div>
+                <div className="content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nullam lacinia lobortis vestibulum. Suspendisse ut
+                        faucibus nisl, sed gravida neque. Vivamus nunc urna,
+                        sodales ac egestas vel, dignissim sit amet metus.
+                        Phasellus tincidunt, elit at maximus consectetur, nisi
+                        eros volutpat ex, at convallis nisi justo et eros. Donec
+                        nec accumsan quam.
+                    </p>
+                </div>
 
-         {/*End of sidebar*/}
-         <div id="slides" className="work-images">
-            <ul>
-               <li style={{gridColumn: '1 / span 3'}}><StaticImage src="../images/pansies/stamp-booklet.jpg" alt="" placeholder="blurred" /></li>
-               <li style={{gridColumn: '4 / span 2'}}><StaticImage src="../images/pansies/stamp.jpg" alt="" placeholder="blurred"/></li>
-               <li style={{gridColumn: '1 / span 4'}}><StaticImage src="../images/pansies/souvenir-sheet.jpg" alt="" placeholder="blurred" /></li>
-               <li style={{gridColumn: '5 / span 2'}}><StaticImage src="../images/pansies/coil-stamp.jpg" alt="" placeholder="blurred" /></li>
-               <li style={{gridColumn: '1 / span 6'}}><StaticImage src="../images/pansies/ofdc.jpg" alt="" placeholder="blurred" /></li>
+                <ul className="credits">
+                    <li>Client: Canada Post</li>
+                    <li>Creative director: Paul Haslip</li>
+                    <li>Designers: Paul Haslip, Marcio Morgado</li>
+                    <li>Illustrator: Laurie Koss</li>
+                    <li>Printer: Lowe-Martin</li>
+                    <li>
+                        Deliverables:{' '}
+                        <ul>
+                            <li>Domestic & International Stamp</li>
+                            <li>Stamp Booklet</li>
+                            <li>First Day Cover</li>
+                            <li>Cancellation Mark</li>
+                            <li>Souvenir Sheet</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div className="workNav">
+                    <Link to="/#work">Back to work</Link>
+                    <div>
+                        <Link to="#">Prev</Link>
+                        <Link to="#">Next</Link>
+                    </div>
+                </div>
+            </div>
+            {/* End of sidebar */}
+
+            <ul id="workImages">
+                <li>
+                    <StaticImage src="../images/pansies/stamp-booklet.jpg" />
+                </li>
+                <li>
+                    <StaticImage src="../images/pansies/stamp.jpg" />
+                </li>
+                <li>
+                    <StaticImage src="../images/pansies/souvenir-sheet.jpg" />
+                </li>
+                <li>
+                    <StaticImage src="../images/pansies/coil-stamp.jpg" />
+                </li>
+                <li>
+                    <StaticImage src="../images/pansies/ofdc.jpg" />
+                </li>
             </ul>
-         </div>
-      </WorkStyle>
-   );
+        </WorkStyle>
+    );
 }

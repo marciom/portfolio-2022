@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_image_shares",
+  "info": {
+    "displayName": "imageShare",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "altText": {
+      "type": "string"
+    },
+    "socialCard": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
