@@ -1,5 +1,5 @@
 import React from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
@@ -122,7 +122,16 @@ export default function SingleProjectPage({ data, pageContext }) {
             {/* END OF SIDEBAR */}
 
             <ul id="workImages">
-                <li>{/* <GatsbyImage  */} images</li>
+                {data.strapiWork.images.map((image) => (
+                    <li>
+                        <GatsbyImage
+                            image={
+                                image.localFile.childImageSharp.gatsbyImageData
+                            }
+                            alt=""
+                        />
+                    </li>
+                ))}
             </ul>
         </WorkStyle>
     );
