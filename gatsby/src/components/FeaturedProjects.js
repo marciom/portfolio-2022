@@ -1,5 +1,6 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import { device } from './devices';
 
@@ -94,55 +95,52 @@ const FWStyle = styled.section`
     }
 `;
 
+function FeaturedWork({ project }) {
+    return (
+        <div className="fw-project">
+            <GatsbyImage
+                image={
+                    project.thumbnail.localFile.childImageSharp.gatsbyImageData
+                }
+                alt=""
+            />
+            <div>
+                <Link to={`work/${project.slug}`}>
+                    <h3 className="serif">{project.title}</h3>
+                </Link>
+            </div>
+        </div>
+    );
+}
+
 export default function FeaturedProjects() {
+    const data = useStaticQuery(graphql`
+        query {
+            allStrapiWork(filter: { isFeatured: { eq: true } }) {
+                nodes {
+                    id
+                    title
+                    slug
+                    isFeatured
+                    thumbnail {
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData(placeholder: BLURRED)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `);
+
     return (
         <FWStyle>
             <h2>Featured Work</h2>
             <div className="fw-container">
-                <div className="fw-project">
-                    <StaticImage
-                        src="../images/Pansies-thumbnail.jpg"
-                        alt=""
-                        placeholder="blurred"
-                    />
-                    <div>
-                        <h3 className="serif">
-                            Canada Post Spring Series: Pansies
-                        </h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Quisque lobortis semper libero, luctus.
-                        </p>
-                    </div>
-                </div>
-                <div className="fw-project">
-                    <StaticImage
-                        src="../images/Quandl-thumbnail.jpg"
-                        alt=""
-                        placeholder="blurred"
-                    />
-                    <div>
-                        <h3 className="serif">Quandl Rebrand</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Quisque lobortis semper libero, luctus.
-                        </p>
-                    </div>
-                </div>
-                <div className="fw-project">
-                    <StaticImage
-                        src="../images/Vector-thumbnail.jpg"
-                        alt=""
-                        placeholder="blurred"
-                    />
-                    <div>
-                        <h3>Vector Institute</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Quisque lobortis semper libero, luctus.
-                        </p>
-                    </div>
-                </div>
+                {data.allStrapiWork.nodes.map((work) => (
+                    <FeaturedWork project={work} key={work.id} />
+                ))}
             </div>
         </FWStyle>
     );

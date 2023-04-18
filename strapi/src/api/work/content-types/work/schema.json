@@ -50,6 +50,16 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.image-share"
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

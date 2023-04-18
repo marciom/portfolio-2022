@@ -1,15 +1,17 @@
-require('dotenv').config({
-    path: `.env.${process.env.NODE_ENV}`,
-});
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const path = require(`path`);
-module.exports = {
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default {
     siteMetadata: {
         title: `Marcio Morgado - Portfolio`,
         siteUrl: `https://www.mrco.design`,
     },
     plugins: [
-        `gatsby-plugin-react-helmet`,
         'gatsby-plugin-styled-components',
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,

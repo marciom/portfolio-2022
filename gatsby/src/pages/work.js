@@ -85,10 +85,16 @@ const WorkStyle = styled.section`
     }
 `;
 
-export default function WorkPage() {
+export default function WorkPage({ data }) {
+    console.log(data.allStrapiWork.nodes[0]);
+
+    data.allStrapiWork.nodes.forEach((work, index) => {
+        console.log(typeof work);
+    });
+
     return (
         <WorkStyle>
-            <div id="sidebar" className="work-info">
+            {/* <div id="sidebar" className="work-info">
                 <h1>Canada Post: Spring Series 2015 Pansies </h1>
 
                 <div className="content">
@@ -128,7 +134,7 @@ export default function WorkPage() {
                     </div>
                 </div>
             </div>
-            {/* End of sidebar */}
+           
 
             <ul id="workImages">
                 <li>
@@ -146,7 +152,20 @@ export default function WorkPage() {
                 <li>
                     <StaticImage src="../images/pansies/ofdc.jpg" />
                 </li>
-            </ul>
+            </ul> */}
+            <pre>{JSON.stringify(data, null, 2)}</pre>
+            <p>{data.allStrapiWork.nodes[2].title}</p>
         </WorkStyle>
     );
 }
+
+export const query = graphql`
+    query {
+        allStrapiWork {
+            nodes {
+                title
+                slug
+            }
+        }
+    }
+`;

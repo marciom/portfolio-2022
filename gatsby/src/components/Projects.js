@@ -1,5 +1,6 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import { device } from './devices';
 
@@ -96,95 +97,54 @@ const ProjectsStyle = styled.section`
         }
     }
 `;
+
+function SingleWork({ project }) {
+    return (
+        <div className="projectItem">
+            <div className="content">
+                <GatsbyImage
+                    image={
+                        project.thumbnail.localFile.childImageSharp
+                            .gatsbyImageData
+                    }
+                    alt=""
+                />
+                <Link to={`work/${project.slug}`}>
+                    <h3>{project.title}</h3>
+                </Link>
+            </div>
+        </div>
+    );
+}
+
 export default function Projects() {
+    const data = useStaticQuery(graphql`
+        query {
+            allStrapiWork(filter: { isFeatured: { eq: false } }) {
+                nodes {
+                    id
+                    title
+                    slug
+                    isFeatured
+                    thumbnail {
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData(placeholder: BLURRED)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `);
     return (
         <ProjectsStyle>
             <h2 id="work">Projects</h2>
+
             <div className="projectContainer">
-                <div className="projectItem">
-                    <StaticImage
-                        src="../images/placeholder.jpg"
-                        alt=""
-                        placeholder="blurred"
-                    />
-
-                    <div className="content">
-                        <h3 className="title serif">SRI Magazine</h3>
-                        <p className="tags">
-                            Editorial, Illustration, Layout, Photo
-                        </p>
-                    </div>
-                </div>
-                <div className="projectItem">
-                    <StaticImage
-                        src="../images/placeholder.jpg"
-                        alt=""
-                        placeholder="blurred"
-                    />
-
-                    <div className="content">
-                        <h3 className="title serif">SRI Magazine</h3>
-                        <p className="tags">
-                            Editorial, Illustration, Layout, Photo
-                        </p>
-                    </div>
-                </div>
-                <div className="projectItem">
-                    <StaticImage
-                        src="../images/placeholder.jpg"
-                        alt=""
-                        placeholder="blurred"
-                    />
-
-                    <div className="content">
-                        <h3 className="title serif">SRI Magazine</h3>
-                        <p className="tags">
-                            Editorial, Illustration, Layout, Photo
-                        </p>
-                    </div>
-                </div>
-                <div className="projectItem">
-                    <StaticImage
-                        src="../images/placeholder.jpg"
-                        alt=""
-                        placeholder="blurred"
-                    />
-
-                    <div className="content">
-                        <h3 className="title serif">SRI Magazine</h3>
-                        <p className="tags">
-                            Editorial, Illustration, Layout, Photo
-                        </p>
-                    </div>
-                </div>
-                <div className="projectItem">
-                    <StaticImage
-                        src="../images/placeholder.jpg"
-                        alt=""
-                        placeholder="blurred"
-                    />
-
-                    <div className="content">
-                        <h3 className="title serif">SRI Magazine</h3>
-                        <p className="tags">
-                            Editorial, Illustration, Layout, Photo
-                        </p>
-                    </div>
-                </div>
-                <div className="projectItem">
-                    <StaticImage
-                        src="../images/placeholder.jpg"
-                        alt=""
-                        placeholder="blurred"
-                    />
-
-                    <div className="content">
-                        <h3 className="title serif">SRI Magazine</h3>
-                        <p className="tags">
-                            Editorial, Illustration, Layout, Photo
-                        </p>
-                    </div>
-                </div>
+                {data.allStrapiWork.nodes.map((work) => (
+                    <SingleWork project={work} key={work.id} />
+                ))}
             </div>
         </ProjectsStyle>
     );
