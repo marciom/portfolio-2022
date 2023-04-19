@@ -37,7 +37,7 @@
         "videos"
       ]
     },
-    "Seo": {
+    "seo": {
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
@@ -46,20 +46,21 @@
       "type": "boolean",
       "default": false
     },
-    "imageSocial": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.image-share"
-    },
     "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "social": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.img-social"
     }
   }
 }

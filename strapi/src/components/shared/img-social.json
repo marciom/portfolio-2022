@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_shared_image_shares",
+  "collectionName": "components_shared_img_socials",
   "info": {
-    "displayName": "imageShare",
+    "displayName": "imgSocial",
     "description": ""
   },
   "options": {},
@@ -9,16 +9,15 @@
     "altText": {
       "type": "string"
     },
-    "socialCard": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
+    "socialIMG": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

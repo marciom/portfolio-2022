@@ -54,6 +54,19 @@ export default {
                 collectionTypes: [
                     {
                         singularName: 'work',
+                        queryParams: {
+                            populate: {
+                                credits: '*',
+                                seo: '*',
+                                thumbnail: '*',
+                                images: '*',
+                                social: {
+                                    populate: {
+                                        socialIMG: '*',
+                                    },
+                                },
+                            },
+                        },
                     },
                 ],
             },
