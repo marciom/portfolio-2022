@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
@@ -87,7 +87,10 @@ const WorkStyle = styled.section`
     }
 `;
 
-export default function SingleProjectPage({ data, pageContext }) {
+export default function SingleProjectPage({
+    data: { strapiWork: singleProject },
+    pageContext,
+}) {
     const prev = pageContext.prev
         ? { url: `/work/${pageContext.prev.slug}` }
         : null;
@@ -98,22 +101,23 @@ export default function SingleProjectPage({ data, pageContext }) {
     const navBlock = useRef(0);
 
     useEffect(() => {
-        navBlock.current.children.length === 2
-            ? navBlock.current.classList.add('colorSep')
-            : navBlock.current.classList.remove('colorSep');
+        const element = navBlock.current;
+        element.children.length === 2
+            ? element.classList.add('colorSep')
+            : element.classList.remove('colorSep');
     }, []);
 
     return (
         <WorkStyle>
             <div id="sidebar" className="work-info">
-                <h1>{data.strapiWork.title} </h1>
+                <h1>{singleProject.title} </h1>
 
                 <div className="content">
-                    <p>{data.strapiWork.description.data.description}</p>
+                    <p>{singleProject.description.data.description}</p>
                 </div>
 
                 <ReactMarkdown className="credits">
-                    {data.strapiWork.credits.credit.data.credit.replace(
+                    {singleProject.credits.credit.data.credit.replace(
                         /\n/gi,
                         '  \n'
                     )}
@@ -132,16 +136,16 @@ export default function SingleProjectPage({ data, pageContext }) {
             {/* END OF SIDEBAR */}
 
             <ul id="workImages">
-                {data.strapiWork.images.map((image) => (
-                    <li key={image.localFile.childImageSharp.id}>
-                        <GatsbyImage
-                            image={
-                                image.localFile.childImageSharp.gatsbyImageData
-                            }
-                            alt=""
-                        />
-                    </li>
-                ))}
+                {singleProject.images.map(
+                    ({ localFile: { childImageSharp: images } }) => (
+                        <li key={images.id}>
+                            <GatsbyImage
+                                image={images.gatsbyImageData}
+                                alt=""
+                            />
+                        </li>
+                    )
+                )}
             </ul>
         </WorkStyle>
     );
