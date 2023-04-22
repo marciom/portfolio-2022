@@ -86,7 +86,7 @@ const HeaderStyle = styled.header`
 
 export default function Nav() {
     // navbar scroll active state
-    const [navbar, setNavBar] = useState(false);
+    const [navBar, setNavBar] = useState(false);
 
     const changeBackground = () => {
         if (window.scrollY >= 50) {
@@ -101,7 +101,7 @@ export default function Nav() {
         window.addEventListener('scroll', changeBackground);
     });
     return (
-        <HeaderStyle className={navbar ? 'scroll' : ''}>
+        <HeaderStyle className={navBar ? 'scroll' : ''}>
             <Logo />
             <nav>
                 <ul>
@@ -116,7 +116,11 @@ export default function Nav() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/work/" activeClassName="active">
+                        <Link
+                            to="/work/"
+                            partiallyActive
+                            activeClassName="active"
+                        >
                             Work
                         </Link>
                     </li>

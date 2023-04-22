@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { Link, graphql } from 'gatsby';
@@ -71,17 +71,18 @@ const WorkStyle = styled.section`
         a {
             text-decoration: none;
         }
-        div {
-            display: inline-block;
 
-            a:first-child::after {
+        .colorSep a:first-child {
+            color: var(--grey);
+            ::after {
                 content: '/';
                 padding: 0 7px 0 7px;
             }
+        }
 
-            a:nth-child(2) {
-                color: var(--black);
-            }
+        div {
+            color: var(--black);
+            display: inline-block;
         }
     }
 `;
@@ -93,6 +94,14 @@ export default function SingleProjectPage({ data, pageContext }) {
     const next = pageContext.next
         ? { url: `/work/${pageContext.next.slug}` }
         : null;
+
+    const navBlock = useRef(0);
+
+    useEffect(() => {
+        navBlock.current.children.length === 2
+            ? navBlock.current.classList.add('colorSep')
+            : navBlock.current.classList.remove('colorSep');
+    }, []);
 
     return (
         <WorkStyle>
@@ -112,7 +121,8 @@ export default function SingleProjectPage({ data, pageContext }) {
 
                 <div className="workNav">
                     <Link to="/#work">Back to work</Link>
-                    <div>
+
+                    <div ref={navBlock}>
                         {prev && <Link to={prev.url}>Prev</Link>}
 
                         {next && <Link to={next.url}>Next</Link>}
@@ -123,7 +133,7 @@ export default function SingleProjectPage({ data, pageContext }) {
 
             <ul id="workImages">
                 {data.strapiWork.images.map((image) => (
-                    <li>
+                    <li key={image.localFile.childImageSharp.id}>
                         <GatsbyImage
                             image={
                                 image.localFile.childImageSharp.gatsbyImageData

@@ -68,11 +68,6 @@ const FWStyle = styled.section`
                 margin-bottom: 3vh;
             }
 
-            div {
-                padding-left: 30px;
-                padding-top: 30px;
-            }
-
             h3 {
                 font-size: 2.2rem;
                 line-height: 1.2;

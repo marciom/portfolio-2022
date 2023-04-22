@@ -11,19 +11,9 @@ const FooterStyle = styled.footer`
     padding-top: 20px;
     padding-bottom: 40px;
 
-    background: white;
+    background: var(--offwhite);
     font-size: 13px;
     border-top: solid 1px var(--black);
-
-    /* ::before{
-        content: " ";
-        display: block;
-        width: 100%;
-        height: 1px;
-        background-color: var(--black);
-        transform: scaleY(0.5);
-
-    } */
 
     p {
         margin: 0;
