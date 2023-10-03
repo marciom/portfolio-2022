@@ -6,6 +6,13 @@ dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const strapiConfig = {
+    apiURL: process.env.STRAPI_API_URL,
+    accessToken: process.env.STRAPI_TOKEN,
+    collectionTypes: ['user', 'work'],
+    singleTypes: [],
+};
+
 export default {
     siteMetadata: {
         title: `Marcio Morgado - Portfolio`,
@@ -28,48 +35,8 @@ export default {
             },
         },
         {
-            resolve: 'gatsby-plugin-google-tagmanager',
-            options: {
-                id: 'GTM-P5XC2TQ',
-
-                // Include GTM in development.
-                //
-                // Defaults to false meaning GTM will only be loaded in production.
-                includeInDevelopment: false,
-
-                // Name of the event that is triggered
-                // on every Gatsby route change.
-                //
-                // Defaults to gatsby-route-change
-                routeChangeEventName: 'portfolio-route-change',
-                // Defaults to false
-                enableWebVitalsTracking: true,
-            },
-        },
-        {
-            resolve: 'gatsby-source-strapi',
-            options: {
-                apiURL: process.env.STRAPI_API_URL || 'http://localhost:1337',
-                accessToken: process.env.STRAPI_TOKEN,
-                collectionTypes: [
-                    {
-                        singularName: 'work',
-                        queryParams: {
-                            populate: {
-                                credits: '*',
-                                seo: '*',
-                                thumbnail: '*',
-                                images: '*',
-                                social: {
-                                    populate: {
-                                        socialIMG: '*',
-                                    },
-                                },
-                            },
-                        },
-                    },
-                ],
-            },
+            resolve: `gatsby-source-strapi`,
+            options: strapiConfig,
         },
     ],
 };

@@ -86,7 +86,7 @@ const WorkStyle = styled.section`
 `;
 
 export default function WorkPage({ data }) {
-    console.log(data.allStrapiWork.nodes[0]);
+    // console.log(data.allStrapiWork.nodes[0]);
 
     data.allStrapiWork.nodes.forEach((work, index) => {
         console.log(typeof work);
@@ -94,7 +94,7 @@ export default function WorkPage({ data }) {
 
     return (
         <WorkStyle>
-            {/* <div id="sidebar" className="work-info">
+            <div id="sidebar" className="work-info">
                 <h1>Canada Post: Spring Series 2015 Pansies </h1>
 
                 <div className="content">
@@ -134,7 +134,6 @@ export default function WorkPage({ data }) {
                     </div>
                 </div>
             </div>
-           
 
             <ul id="workImages">
                 <li>
@@ -152,7 +151,7 @@ export default function WorkPage({ data }) {
                 <li>
                     <StaticImage src="../images/pansies/ofdc.jpg" />
                 </li>
-            </ul> */}
+            </ul>
             <pre>{JSON.stringify(data, null, 2)}</pre>
             <p>{data.allStrapiWork.nodes[2].title}</p>
         </WorkStyle>

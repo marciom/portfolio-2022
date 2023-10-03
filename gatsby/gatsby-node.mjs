@@ -1,7 +1,7 @@
-import path from 'path';
+import path from "path";
 
 async function projectPageBuilder({ graphql, actions }) {
-    const projectTemplate = path.resolve('./src/templates/Project.js');
+    const projectTemplate = path.resolve("./src/templates/Project.js");
 
     const { data } = await graphql(`
         query {
