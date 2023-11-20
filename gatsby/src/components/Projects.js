@@ -1,6 +1,6 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { device } from './devices';
 
@@ -98,53 +98,17 @@ const ProjectsStyle = styled.section`
     }
 `;
 
-function SingleWork({ project }) {
-    return (
-        <div className="projectItem">
-            <div className="content">
-                <GatsbyImage
-                    image={
-                        project.thumbnail.localFile.childImageSharp
-                            .gatsbyImageData
-                    }
-                    alt=""
-                />
-                <Link to={`work/${project.slug}`}>
-                    <h3>{project.title}</h3>
-                </Link>
-            </div>
-        </div>
-    );
-}
-
 export default function Projects() {
-    const data = useStaticQuery(graphql`
-        query {
-            allStrapiWork(filter: { isFeatured: { eq: false } }) {
-                nodes {
-                    id
-                    title
-                    slug
-                    isFeatured
-                    thumbnail {
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData(placeholder: BLURRED)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `);
     return (
         <ProjectsStyle>
             <h2 id="work">Projects</h2>
 
             <div className="projectContainer">
-                {data.allStrapiWork.nodes.map((work) => (
-                    <SingleWork project={work} key={work.id} />
-                ))}
+                <div className="content">
+                    <Link to="#">
+                        <h3>test</h3>
+                    </Link>
+                </div>
             </div>
         </ProjectsStyle>
     );

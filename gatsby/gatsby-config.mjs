@@ -1,17 +1,8 @@
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-const strapiConfig = {
-    apiURL: process.env.STRAPI_API_URL,
-    accessToken: process.env.STRAPI_TOKEN,
-    collectionTypes: ['user', 'work'],
-    singleTypes: [],
-};
 
 export default {
     siteMetadata: {
@@ -33,10 +24,6 @@ export default {
                 name: `images`,
                 path: path.join(__dirname, `src`, `images`),
             },
-        },
-        {
-            resolve: `gatsby-source-strapi`,
-            options: strapiConfig,
         },
     ],
 };

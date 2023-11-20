@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import FeaturedProjects from "../components/FeaturedProjects";
-import Hero from "../components/Hero";
+import FeaturedProjects from '../components/FeaturedProjects';
+import Hero from '../components/Hero';
 
 const AboutStyle = styled.section`
     margin-top: 25vh;
@@ -24,30 +24,31 @@ export default function AboutPage() {
             <AboutStyle>
                 {/* Pull out quote */}
                 <h1 className="serif">
-                    I strive to create things that are{" "}
-                    <span className="italic">simple</span>,{" "}
-                    <span className="italic">effective</span> and{" "}
+                    I strive to create things that are{' '}
+                    <span className="italic">simple</span>,{' '}
+                    <span className="italic">effective</span> and{' '}
                     <span className="italic">elegant</span>.
                 </h1>
 
                 <p>
-                    I’m currently a product designer at Nasdaq. My day-to-day
-                    involves improving the experience of our users on the Nasdaq
-                    Data Link platform and pushing our design aesthetic forward.
+                    IU+2019m currently a product designer at Nasdaq. My
+                    day-to-day involves improving the experience of our users on
+                    the Nasdaq Data Link platform and pushing our design
+                    aesthetic forward.
                 </p>
 
                 <img src="" alt="" />
 
                 <h2>Introduction</h2>
                 <p>
-                    I’ve always had a passion for art and technology and looked
-                    for ways to make money doing both. At first I intended to be
-                    an animator and I was fully motivated to become just that.
-                    One thing led to another and I stumbled upon graphic design.
-                    After pursuing education at Humber College I worked at HM&E
-                    Design, a Toronto-based design agency, for 6.5 years. During
-                    that time I built a foundation of typography, layout and
-                    critical design thinking.
+                    IU+2019ve always had a passion for art and technology and
+                    looked for ways to make money doing both. At first I
+                    intended to be an animator and I was fully motivated to
+                    become just that. One thing led to another and I stumbled
+                    upon graphic design. After pursuing education at Humber
+                    College I worked at HM&E Design, a Toronto-based design
+                    agency, for 6.5 years. During that time I built a foundation
+                    of typography, layout and critical design thinking.
                 </p>
 
                 <p>

@@ -1,7 +1,8 @@
 import React from 'react';
-import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'gatsby';
+import { ImgComparisonSlider } from '@img-comparison-slider/react';
 
 const WorkStyle = styled.section`
     margin-top: 12vh;
@@ -85,13 +86,7 @@ const WorkStyle = styled.section`
     }
 `;
 
-export default function WorkPage({ data }) {
-    // console.log(data.allStrapiWork.nodes[0]);
-
-    data.allStrapiWork.nodes.forEach((work, index) => {
-        console.log(typeof work);
-    });
-
+export default function WorkPage() {
     return (
         <WorkStyle>
             <div id="sidebar" className="work-info">
@@ -152,19 +147,6 @@ export default function WorkPage({ data }) {
                     <StaticImage src="../images/pansies/ofdc.jpg" />
                 </li>
             </ul>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
-            <p>{data.allStrapiWork.nodes[2].title}</p>
         </WorkStyle>
     );
 }
-
-export const query = graphql`
-    query {
-        allStrapiWork {
-            nodes {
-                title
-                slug
-            }
-        }
-    }
-`;

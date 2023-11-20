@@ -1,8 +1,8 @@
-import React from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
-import { useStaticQuery, graphql, Link } from "gatsby";
-import styled from "styled-components";
-import { device } from "./devices";
+import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import { device } from './devices';
 
 const FWStyle = styled.section`
     h2 {
@@ -12,7 +12,7 @@ const FWStyle = styled.section`
 
         &:after {
             display: block;
-            content: " ";
+            content: ' ';
             width: 66px;
             height: 2px;
             background: black;
@@ -48,7 +48,7 @@ const FWStyle = styled.section`
             letter-spacing: -1px;
             margin: 0;
 
-            font-family: "Crimson Pro", serif;
+            font-family: 'Crimson Pro', serif;
             font-weight: 300;
         }
 
@@ -90,55 +90,14 @@ const FWStyle = styled.section`
     }
 `;
 
-function FeaturedWork({ project }) {
-    return (
-        <div className="fw-project">
-            {/* <GatsbyImage
-                image={
-                    project.thumbnail.localFile.childImageSharp.gatsbyImageData
-                }
-                alt=""
-            />
-            <div>
-                <Link to={`work/${project.slug}`}>
-                    <h3 className="serif">{project.title}</h3>
-                </Link>
-            </div> */}
-
-            <p>hello world</p>
-        </div>
-    );
-}
-
 export default function FeaturedProjects() {
-    // const data = useStaticQuery(graphql`
-    //     query {
-    //         allStrapiWork(filter: { isFeatured: { eq: true } }) {
-    //             nodes {
-    //                 id
-    //                 title
-    //                 slug
-    //                 isFeatured
-    //                 thumbnail {
-    //                     localFile {
-    //                         childImageSharp {
-    //                             gatsbyImageData(placeholder: BLURRED)
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // `);
-
     return (
         <FWStyle>
             <h2>Featured Work</h2>
             <div className="fw-container">
-                <p>hello</p>
-                {/* {data.allStrapiWork.nodes.map((work) => (
-                    <FeaturedWork project={work} key={work.id} />
-                ))} */}
+                <div className="fw-project">
+                    <p>hello world</p>
+                </div>
             </div>
         </FWStyle>
     );
